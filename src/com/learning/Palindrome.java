@@ -17,7 +17,20 @@ public class Palindrome {
 	
 	public static boolean isPalindrom(String str) {
 		
-		String result = "";
+		int start = 0;
+		int end = str.length() - 1;
+		
+		while(start < end) {
+			if(str.charAt(start) != str.charAt(end)){
+				return false;
+			}
+			start++;
+			end--;
+		}
+		
+		return true;
+		
+		/*String result = "";
 		boolean palindrome = false;
 		for(int i = str.length() - 1; i >= 0; i--){
 			result += str.charAt(i);
@@ -27,7 +40,7 @@ public class Palindrome {
 			palindrome = true;
 		}
 		
-		return palindrome;
+		return palindrome;*/
 	}
 
 }
