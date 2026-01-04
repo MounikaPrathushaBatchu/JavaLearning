@@ -1,8 +1,42 @@
 package com.learning;
 
-public class Palindrome {
+import java.util.Scanner;
 
+public class Palindrome {
+	
 	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("enter input : ");
+		String input = sc.nextLine();
+		boolean b = isPalindrome(input);
+		if(b == true) {
+			System.out.println("given String is Palindrome : "+input);
+		} else {
+			System.out.println("given String is not Palindrome : "+input);
+		}
+	}
+	
+	public static boolean isPalindrome(String input) {
+		
+		boolean isPalim = false;
+		String reverseInput = "";
+		
+		if(input.length() == 0) {
+			isPalim = false;
+		}
+		
+		for(int i = input.length() - 1; i >= 0; i--) {
+			reverseInput = reverseInput + input.charAt(i);
+		}
+		if(input.equalsIgnoreCase(reverseInput)) {
+			isPalim = true;
+		} else {
+			isPalim = false;
+		}
+		return isPalim;
+	}
+
+	/*public static void main(String[] args) {
 		String input = "Abcddcba";
 		boolean palindrome = isPalindrom(input);
 		System.out.println("given String :"+input);
@@ -28,7 +62,7 @@ public class Palindrome {
 			end--;
 		}
 		
-		return true;
+		return true;*/
 		
 		/*String result = "";
 		boolean palindrome = false;
@@ -41,6 +75,6 @@ public class Palindrome {
 		}
 		
 		return palindrome;*/
-	}
+//	}
 
 }

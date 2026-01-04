@@ -4,7 +4,7 @@ import java.util.function.BiConsumer;
 
 public class LambdaDemo {
 	
-	public static void main(String []args) {
+	public static void main(String [] args) {
 		
 		// calling method using usual manner
 		LambdaDemo ld = new LambdaDemo();

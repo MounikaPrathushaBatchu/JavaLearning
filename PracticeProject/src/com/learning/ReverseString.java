@@ -1,33 +1,59 @@
 package com.learning;
 
+import java.util.Scanner;
+
 public class ReverseString {
-    public static void main(String[] args) {
-        // Input string (hardcoded)
-        String input = "HelloWorld";
-
-        // Convert to character array
-        char[] chars = input.toCharArray();
-
-        // Reverse characters manually
-        int left = 0;
-        int right = chars.length - 1;
-
-        while (left < right) {
-            // Swap characters
-            char temp = chars[left];
-            chars[left] = chars[right];
-            chars[right] = temp;
-
-            left++;
-            right--;
-        }
-
-        // Print reversed string
-        System.out.print("Reversed String: ");
-        for (int i = 0; i < chars.length; i++) {
-            System.out.print(chars[i]);
-        }
-    }
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("enter String : ");
+		String input = sc.nextLine();
+		String revesreString = reverseString(input);
+		System.out.println("reverse String : "+revesreString);
+	}
+	
+	public static String reverseString(String input) {
+		System.out.println("input : "+input);
+		if(input.length() == 0) {
+			return null;
+		}
+		String reverseInput = "";
+		char ch;
+		for(int i = input.length() - 1; i >= 0; i--) {
+			ch = input.charAt(i);
+			reverseInput = reverseInput + ch;
+		}
+		
+		return reverseInput;
+	}
+	
+//    public static void main(String[] args) {
+//        // Input string (hardcoded)
+//        String input = "HelloWorld";
+//
+//        // Convert to character array
+//        char[] chars = input.toCharArray();
+//
+//        // Reverse characters manually
+//        int left = 0;
+//        int right = chars.length - 1;
+//
+//        while (left < right) {
+//            // Swap characters
+//            char temp = chars[left];
+//            chars[left] = chars[right];
+//            chars[right] = temp;
+//
+//            left++;
+//            right--;
+//        }
+//
+//        // Print reversed string
+//        System.out.print("Reversed String: ");
+//        for (int i = 0; i < chars.length; i++) {
+//            System.out.print(chars[i]);
+//        }
+//    }
 }
 
 
